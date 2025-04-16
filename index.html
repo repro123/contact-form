@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main>
+      <form novalidate action="#" id="form" class="c-card-container">
+        <h1>Contact us</h1>
+
+        <div class="names-container">
+          <div class="label-input-error-container">
+            <label for="firstName" class="label"
+              >First Name <span aria-hidden="true">*</span></label
+            >
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              required
+              autocomplete="given-name"
+              class="input-field"
+            />
+            <p aria-live="polite" class="error-text" id="firstNameError"></p>
+          </div>
+
+          <div class="label-input-error-container">
+            <label for="lastName" class="label"
+              >Last Name <span aria-hidden="true">*</span></label
+            >
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              required
+              autocomplete="family-name"
+              class="input-field"
+            />
+            <p aria-live="polite" class="error-text" id="lastNameError"></p>
+          </div>
+        </div>
+
+        <div class="label-input-error-container">
+          <label for="email" class="label"
+            >Email address <span aria-hidden="true">*</span></label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            autocomplete="email"
+            class="input-field"
+          />
+          <p aria-live="polite" class="error-text" id="emailError"></p>
+        </div>
+
+        <div class="label-input-error-container">
+          <p class="label">Query Type <span aria-hidden="true">*</span></p>
+
+          <div class="radio-div-containers">
+            <div class="input-field radio-div">
+              <input type="radio" name="query" id="generalEnquiry" />
+              <img
+                src="./assets/images/icon-radio-selected.svg"
+                alt=""
+                class="selected-radio"
+              />
+              <label for="generalEnquiry" class="label">General Enquiry</label>
+            </div>
+
+            <div class="input-field radio-div">
+              <input type="radio" name="query" id="supportRequest" />
+              <img
+                src="./assets/images/icon-radio-selected.svg"
+                alt=""
+                class="selected-radio"
+              />
+              <label for="supportRequest" class="label">Support Request</label>
+            </div>
+          </div>
+
+          <p aria-live="polite" class="error-text" id="queryTypeError"></p>
+        </div>
+
+        <div class="label-input-error-container">
+          <label for="textarea" class="label"
+            >Message <span aria-hidden="true">*</span></label
+          >
+          <textarea
+            name="textarea"
+            id="textarea"
+            class="textarea input-field"
+            required
+          ></textarea>
+          <p aria-live="polite" class="error-text" id="textareaError"></p>
+        </div>
+
+        <div class="label-input-error-container">
+          <div class="checkbox-container">
+            <input type="checkbox" name="consent" id="consent" required />
+            <img
+              src="./assets/images/icon-checkbox-check.svg"
+              alt=""
+              class="selected-checkbox"
+            />
+            <label for="consent" class="label"
+              >I consent to being contacted by the team
+              <span aria-hidden="true">*</span></label
+            >
+          </div>
+          <p class="error-text" aria-live="polite" id="checkboxError"></p>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <dialog>
+        <p>
+          <img src="./assets/images/icon-success-check.svg" alt="" />
+          <span id="dialogParagraphOne" aria-live="polite">Message Sent!</span>
+        </p>
+        <p id="dialogParagraphTwo" aria-live="polite">
+          Thanks for completing the form. We'll be in touch soon!
+        </p>
+      </dialog>
+    </main>
+
+    <footer>
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.github.com/repro123" target="_blank"
+          >Bello Ibrahim</a
+        >
+      </p>
+    </footer>
+
+    <script src="./src/index.js"></script>
+  </body>
+</html>
