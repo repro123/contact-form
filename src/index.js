@@ -105,7 +105,7 @@ function validateRadioInputs() {
 function validateTextarea() {
   const message = textareaInput.value.trim();
   const minLength = 30;
-  const validLength = message.length > minLength;
+  const validLength = message.length >= minLength;
   const isValid = !!message;
 
   textareaInput.removeAttribute("data-invalid");
@@ -140,7 +140,7 @@ function validateCheckbox() {
 
   if (!isChecked) {
     checkboxInput.setAttribute("aria-invalid", "true");
-    checkboxInput.setAttribute("aria-describedby", checkboxError);
+    checkboxInput.setAttribute("aria-describedby", "checkboxError");
     checkboxError.textContent =
       "To submit this form, please consent to being contacted";
   }
@@ -187,5 +187,11 @@ form.addEventListener("submit", function (e) {
       "Thanks for completing the form. We'll be in touch soon";
     dialog.showModal();
     form.reset();
+
+    setTimeout(function () {
+      dialogParagraphOne.textContent = "";
+      dialogParagraphTwo.textContent = "";
+      dialog.close();
+    }, 3000);
   }
 });
